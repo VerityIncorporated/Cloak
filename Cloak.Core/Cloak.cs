@@ -9,7 +9,7 @@ using Cloak.Core.Protections.Impl.ControlFlow;
 
 namespace Cloak.Core;
 
-public sealed class Cloak()
+public sealed class Cloak
 {
     private readonly List<Processor> _processors =
     [
@@ -29,7 +29,8 @@ public sealed class Cloak()
     public List<Protection> Protections { get; } = [
         new StringEncryption(),
         new ControlFlow(),
-        new IntEncryption()
+        new IntEncryption(),
+        new Renaming()
     ];
 
     public void Protect(string inputFile, string outputDestination)
