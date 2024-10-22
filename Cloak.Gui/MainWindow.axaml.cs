@@ -25,6 +25,7 @@ public partial class MainWindow : Window
         Width = 350;
         
         Protections.ItemsSource = _cloak.Protections.ConvertAll(p => p.Name);
+        Protections.Height *= _cloak.Protections.Count;
     }
 
     // ReSharper disable once UnusedParameter.local
